@@ -8,18 +8,9 @@ $(document).ready(function () {
             last_name: $('#last_name').val(),
             timezone: $('#timezone').val(),
             locale: $('#locale').val(),
-            profile_pic: $('#profile_pic').val()
+            profile_pic: $('#profile_pic').val(),
+            baseDatos: $('#baseDatos').val()
         };
-
-
-        var guardarDB = $('#baseDatos').val();
-
-
-        console.log("====================================")
-        console.log("====================================")
-        console.log("====================================")
-        console.log("====================================")
-        console.log(guardarDB);
 
         if (data._id == '') {
             $("#_id").focus();
@@ -36,6 +27,9 @@ $(document).ready(function () {
         $('#formulario').trigger('reset');
         return true;
     });
+
+
+
 
     function swal(type, message, time) {
         Swal.fire({
@@ -77,7 +71,7 @@ $(document).ready(function () {
 
     var fill = function (data) {
         if ($('#' + data._id).length == 0) {
-            var $row = $('<tr id="' + data._id + '">');
+            var $row = $('<tr id="' + data._id + '" >');
             $row.append('<td>' + data._id + '</td>');
             $row.append('<td>' + data.first_name + '</td>');
             $row.append('<td>' + data.last_name + '</td>');
@@ -115,7 +109,6 @@ $(document).ready(function () {
                     }
                 })
             });
-
 
 
             $('table tbody').append($row);

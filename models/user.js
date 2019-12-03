@@ -24,7 +24,13 @@ module.exports = {
             locale: data.locale,
             profile_pic: data.profile_pic
         };
-        var nuevo = new user_model(item).save();
+        let _savedb = data.baseDatos;
+        console.log("***********************************");
+        console.log("USER");
+        console.log(_savedb);
+        if (_savedb == "0") {
+            var nuevo = new user_model(item).save();
+        }
         callback(item);
     },
     show: function (callback) {
